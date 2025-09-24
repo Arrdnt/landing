@@ -3,12 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Alex's Web3 Profile - Blockchain Innovator</title>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/particles.js/2.0.0/particles.min.js"></script>
+    <title>Alex's Bold Portfolio - Creative Profile</title>
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <link href="https://unpkg.com/aos@next/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
     <style>
         /* Reset & Base */
         * {
@@ -17,59 +16,47 @@
             box-sizing: border-box;
         }
         body {
-            font-family: 'Rajdhani', sans-serif;
-            line-height: 1.6;
-            color: #e2e8f0;
+            font-family: 'Open Sans', sans-serif;
+            line-height: 1.7;
+            color: #333;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
             overflow-x: hidden;
-            background: #000;
-            position: relative;
         }
-        body::before {
-            content: '';
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="noise" x="0" y="0" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="25" cy="25" r="1" fill="%2300ffff" opacity="0.1"/><circle cx="75" cy="75" r="0.5" fill="%237c3aed" opacity="0.05"/><circle cx="50" cy="50" r="0.8" fill="%2310b981" opacity="0.08"/></pattern></defs><rect width="100" height="100" fill="url(%23noise)"/></svg>');
-            z-index: -2;
-            pointer-events: none;
-        }
-        /* Custom Properties - Web3 Colors */
+        /* Custom Colors - Bold & Colorful */
         :root {
-            --neon-cyan: #00ffff;
-            --neon-purple: #7c3aed;
-            --neon-green: #10b981;
-            --bg-dark: #000;
-            --glass: rgba(255, 255, 255, 0.05);
-            --border-neon: rgba(0, 255, 255, 0.3);
+            --bold-orange: #ff6b35;
+            --vibrant-teal: #20b2aa;
+            --playful-pink: #ff69b4;
+            --sunny-yellow: #ffd23f;
+            --deep-blue: #2c3e50;
+            --light-bg: #f8f9fa;
         }
-        /* Header - Futuristic Nav */
+        /* Header - Bold Nav */
         header {
             position: fixed;
             top: 0;
             width: 100%;
             z-index: 1000;
-            background: rgba(0, 0, 0, 0.8);
-            backdrop-filter: blur(20px);
-            border-bottom: 1px solid var(--border-neon);
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 3px solid var(--vibrant-teal);
             padding: 1rem 0;
         }
         nav {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            max-width: 1400px;
+            max-width: 1200px;
             margin: 0 auto;
             padding: 0 2rem;
         }
         .logo {
-            font-family: 'Orbitron', monospace;
-            font-size: 1.8rem;
-            font-weight: 900;
-            background: linear-gradient(45deg, var(--neon-cyan), var(--neon-purple));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 2.5rem;
+            font-weight: 400;
+            color: var(--bold-orange);
+            text-transform: uppercase;
+            letter-spacing: 2px;
         }
         .nav-links {
             display: flex;
@@ -77,151 +64,109 @@
             gap: 2rem;
         }
         .nav-links a {
-            color: #e2e8f0;
+            color: var(--deep-blue);
             text-decoration: none;
-            font-weight: 500;
-            transition: all 0.3s ease;
+            font-weight: 600;
+            transition: color 0.3s ease;
             position: relative;
-            padding: 0.5rem 1rem;
-            border-radius: 5px;
         }
         .nav-links a:hover {
-            color: var(--neon-cyan);
-            background: rgba(0, 255, 255, 0.1);
-            box-shadow: 0 0 20px var(--neon-cyan);
+            color: var(--playful-pink);
         }
-        .wallet-btn {
-            padding: 0.7rem 1.5rem;
-            background: linear-gradient(45deg, var(--neon-purple), var(--neon-green));
-            color: #fff;
-            border: none;
-            border-radius: 25px;
-            font-weight: 700;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            animation: pulse 2s infinite;
-            font-family: 'Orbitron', monospace;
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 3px;
+            background: linear-gradient(45deg, var(--vibrant-teal), var(--playful-pink));
+            transition: width 0.3s ease;
         }
-        @keyframes pulse {
-            0%, 100% { box-shadow: 0 0 10px var(--neon-purple); }
-            50% { box-shadow: 0 0 30px var(--neon-green); }
+        .nav-links a:hover::after {
+            width: 100%;
         }
-        .wallet-btn:hover {
-            transform: scale(1.05);
-            box-shadow: 0 0 40px var(--neon-green);
-        }
-        /* Hero - Futuristic with Typing */
+        /* Hero - Bold & Vibrant */
         #hero {
             height: 100vh;
             display: flex;
             align-items: center;
             justify-content: center;
             text-align: center;
+            background: linear-gradient(135deg, var(--vibrant-teal) 0%, var(--bold-orange) 100%);
+            color: #fff;
             position: relative;
             overflow: hidden;
-            background: radial-gradient(ellipse at center, rgba(124, 58, 237, 0.1) 0%, #000 70%);
-        }
-        #particles-js {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            z-index: -1;
         }
         .hero-content {
-            z-index: 1;
-            max-width: 900px;
+            max-width: 800px;
             padding: 0 2rem;
         }
         .hero-title {
-            font-family: 'Orbitron', monospace;
-            font-size: 5rem;
-            font-weight: 900;
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 6rem;
+            font-weight: 400;
             margin-bottom: 1rem;
-            background: linear-gradient(45deg, var(--neon-cyan), var(--neon-purple), var(--neon-green));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            animation: neonGlow 1.5s ease-in-out infinite alternate;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
         }
-        @keyframes neonGlow {
-            from { filter: drop-shadow(0 0 10px var(--neon-cyan)); }
-            to { filter: drop-shadow(0 0 30px var(--neon-purple)); }
-        }
-        .typing-text {
-            font-size: 1.8rem;
+        .hero-subtitle {
+            font-size: 1.5rem;
             margin-bottom: 2rem;
-            border-right: 3px solid var(--neon-cyan);
-            animation: blink 1s infinite;
-            opacity: 0.9;
-        }
-        @keyframes blink {
-            50% { border-color: transparent; }
-        }
-        .stats-grid {
-            display: flex;
-            justify-content: space-around;
-            gap: 2rem;
-            margin-bottom: 2rem;
-        }
-        .stat-item {
-            text-align: center;
-        }
-        .stat-number {
-            font-family: 'Orbitron', monospace;
-            font-size: 2.5rem;
-            font-weight: 900;
-            color: var(--neon-green);
-        }
-        .stat-label {
-            font-size: 0.9rem;
-            opacity: 0.7;
+            opacity: 0.95;
+            font-weight: 300;
         }
         .cta-button {
             display: inline-block;
-            padding: 1rem 2.5rem;
-            background: transparent;
-            color: var(--neon-cyan);
+            padding: 1.2rem 3rem;
+            background: var(--sunny-yellow);
+            color: var(--deep-blue);
             text-decoration: none;
-            border: 2px solid var(--border-neon);
             border-radius: 50px;
             font-weight: 700;
+            font-size: 1.1rem;
             transition: all 0.3s ease;
-            font-family: 'Rajdhani', sans-serif;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            box-shadow: 0 5px 15px rgba(255, 210, 63, 0.4);
         }
         .cta-button:hover {
-            background: linear-gradient(45deg, var(--neon-cyan), var(--neon-purple));
-            box-shadow: 0 0 30px var(--neon-cyan);
-            transform: translateY(-5px);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(255, 210, 63, 0.6);
+            background: var(--playful-pink);
+            color: #fff;
         }
-        /* Sections - Glassmorphism */
+        /* Sections */
         section {
             padding: 6rem 2rem;
-            max-width: 1400px;
+            max-width: 1200px;
             margin: 0 auto;
-            position: relative;
         }
         .section-title {
-            font-family: 'Orbitron', monospace;
+            font-family: 'Bebas Neue', sans-serif;
             text-align: center;
-            font-size: 3.5rem;
-            margin-bottom: 4rem;
-            background: linear-gradient(45deg, var(--neon-purple), var(--neon-green));
+            font-size: 4rem;
+            margin-bottom: 3rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            background: linear-gradient(45deg, var(--bold-orange), var(--playful-pink));
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            position: relative;
+            font-weight: 400;
         }
-        .section-title::after {
-            content: '';
-            position: absolute;
-            bottom: -10px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 100px;
-            height: 3px;
-            background: linear-gradient(90deg, var(--neon-cyan), var(--neon-purple));
-            border-radius: 2px;
+        .section-subtitle {
+            text-align: center;
+            font-size: 1.2rem;
+            opacity: 0.8;
+            margin-bottom: 3rem;
+            color: var(--deep-blue);
         }
-        /* About - Asymmetric Layout */
+        /* About - Colorful Layout */
         #about {
+            background: var(--light-bg);
+            border-radius: 20px;
+            padding: 4rem;
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 4rem;
@@ -229,155 +174,181 @@
         }
         #about .about-text {
             font-size: 1.1rem;
-            opacity: 0.9;
+            color: var(--deep-blue);
         }
-        .blockchain-avatar {
+        .profile-img {
             width: 100%;
-            height: 400px;
-            background: linear-gradient(145deg, var(--glass), rgba(124, 58, 237, 0.2));
-            border: 1px solid var(--border-neon);
+            height: 300px;
+            background: linear-gradient(45deg, var(--vibrant-teal), var(--sunny-yellow));
             border-radius: 20px;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 8rem;
-            transform-style: preserve-3d;
-            transition: transform 0.5s ease;
-            backdrop-filter: blur(10px);
+            font-size: 5rem;
+            color: #fff;
+            transition: transform 0.3s ease;
         }
-        .blockchain-avatar:hover {
-            transform: rotateY(15deg) rotateX(10deg);
+        .profile-img:hover {
+            transform: scale(1.05);
         }
-        /* Skills - 3D Tilt Cards */
+        /* Skills - Clickable Cards with Modal */
         .skills-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 2rem;
         }
         .skill-item {
-            background: var(--glass);
-            border: 1px solid var(--border-neon);
-            border-radius: 20px;
-            padding: 2.5rem;
+            background: #fff;
+            border: 4px solid var(--vibrant-teal);
+            border-radius: 15px;
+            padding: 2rem;
             text-align: center;
-            transition: all 0.4s ease;
             cursor: pointer;
-            backdrop-filter: blur(20px);
-            transform-style: preserve-3d;
-            perspective: 1000px;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(32, 178, 170, 0.2);
         }
         .skill-item:hover {
-            transform: translateY(-15px) rotateX(10deg);
-            box-shadow: 0 20px 60px rgba(0, 255, 255, 0.2);
-            border-color: var(--neon-cyan);
+            transform: translateY(-10px);
+            border-color: var(--playful-pink);
+            box-shadow: 0 10px 30px rgba(255, 105, 180, 0.3);
         }
         .skill-icon {
-            font-size: 3.5rem;
+            font-size: 3rem;
             margin-bottom: 1rem;
-            background: linear-gradient(45deg, var(--neon-green), var(--neon-purple));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+            color: var(--bold-orange);
         }
         .skill-title {
-            font-family: 'Orbitron', monospace;
-            font-size: 1.4rem;
-            margin-bottom: 1rem;
-            color: #fff;
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 1.8rem;
+            margin-bottom: 0.5rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
         }
         .skill-bar {
             width: 100%;
-            height: 8px;
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 4px;
+            height: 10px;
+            background: #e0e0e0;
+            border-radius: 5px;
             overflow: hidden;
             margin-top: 1rem;
         }
         .skill-progress {
             height: 100%;
-            background: linear-gradient(90deg, var(--neon-cyan), var(--neon-green));
+            background: linear-gradient(90deg, var(--vibrant-teal), var(--sunny-yellow));
             width: 0;
             transition: width 2s ease-in-out;
-            border-radius: 4px;
-            position: relative;
+            border-radius: 5px;
         }
-        .skill-progress::after {
-            content: '';
-            position: absolute;
-            top: 0;
+        /* Modal - Detailed Skill Popup */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 2000;
             left: 0;
+            top: 0;
             width: 100%;
             height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.5), transparent);
-            animation: shimmer 2s infinite;
+            background: rgba(0, 0, 0, 0.7);
+            backdrop-filter: blur(5px);
+            animation: fadeIn 0.3s ease;
         }
-        @keyframes shimmer {
-            0% { transform: translateX(-100%); }
-            100% { transform: translateX(100%); }
+        .modal-content {
+            background: linear-gradient(135deg, #fff 0%, var(--light-bg) 100%);
+            margin: 5% auto;
+            padding: 2rem;
+            border-radius: 20px;
+            width: 80%;
+            max-width: 600px;
+            max-height: 80vh;
+            overflow-y: auto;
+            border: 3px solid var(--playful-pink);
+            animation: slideIn 0.4s ease;
+            position: relative;
         }
-        /* Projects - NFT-style Cards */
+        .close {
+            position: absolute;
+            right: 1.5rem;
+            top: 1rem;
+            font-size: 2rem;
+            cursor: pointer;
+            color: var(--bold-orange);
+            transition: color 0.3s ease;
+        }
+        .close:hover {
+            color: var(--sunny-yellow);
+        }
+        .skill-detail-img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 10px;
+            margin-bottom: 1rem;
+        }
+        .skill-detail-title {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            color: var(--deep-blue);
+            text-transform: uppercase;
+        }
+        .skill-detail-narasi {
+            font-size: 1rem;
+            margin-bottom: 1rem;
+            line-height: 1.6;
+            color: #555;
+        }
+        .project-link {
+            display: inline-block;
+            padding: 0.8rem 1.5rem;
+            background: var(--bold-orange);
+            color: #fff;
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: 600;
+            transition: background 0.3s ease;
+        }
+        .project-link:hover {
+            background: var(--playful-pink);
+        }
+        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+        @keyframes slideIn { from { transform: translateY(-50px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
+        /* Projects - Colorful Cards */
         .projects-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 2rem;
         }
         .project-card {
-            background: var(--glass);
-            border: 1px solid var(--border-neon);
-            border-radius: 20px;
+            background: #fff;
+            border: 3px solid var(--sunny-yellow);
+            border-radius: 15px;
             padding: 2rem;
             text-align: center;
-            transition: all 0.4s ease;
-            backdrop-filter: blur(20px);
-            position: relative;
-            overflow: hidden;
-        }
-        .project-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 3px;
-            background: linear-gradient(90deg, var(--neon-cyan), var(--neon-purple), var(--neon-green));
-            animation: borderShine 3s infinite;
-        }
-        @keyframes borderShine {
-            0% { transform: translateX(-100%); }
-            100% { transform: translateX(100%); }
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(255, 210, 63, 0.2);
         }
         .project-card:hover {
-            transform: scale(1.05) translateY(-10px);
-            box-shadow: 0 30px 80px rgba(124, 58, 237, 0.3);
-            border-color: var(--neon-green);
+            transform: translateY(-5px);
+            border-color: var(--vibrant-teal);
+            box-shadow: 0 10px 30px rgba(32, 178, 170, 0.3);
         }
         .project-icon {
-            font-size: 4rem;
+            font-size: 3rem;
             margin-bottom: 1rem;
-            background: linear-gradient(45deg, var(--neon-purple), var(--neon-green));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+            color: var(--playful-pink);
         }
-        .mint-btn {
-            margin-top: 1rem;
-            padding: 0.8rem 1.5rem;
-            background: linear-gradient(45deg, var(--neon-green), var(--neon-purple));
-            color: #fff;
-            border: none;
-            border-radius: 25px;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            font-family: 'Orbitron', monospace;
+        .project-title {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+            text-transform: uppercase;
         }
-        .mint-btn:hover {
-            box-shadow: 0 0 20px var(--neon-green);
-            transform: scale(1.1);
-        }
-        /* Contact - Form Glass */
+        /* Contact - Form Bold */
         #contact {
-            background: rgba(0, 0, 0, 0.5);
+            background: linear-gradient(135deg, var(--bold-orange) 0%, var(--playful-pink) 100%);
+            color: #fff;
             border-radius: 20px;
-            margin: 2rem;
-            padding: 3rem;
+            padding: 4rem;
         }
         #contact form {
             display: grid;
@@ -386,70 +357,64 @@
             margin: 0 auto;
         }
         #contact input, #contact textarea {
-            padding: 1.2rem;
-            border: 1px solid var(--border-neon);
+            padding: 1rem;
+            border: none;
             border-radius: 10px;
-            background: var(--glass);
-            color: #fff;
             font-size: 1rem;
-            backdrop-filter: blur(10px);
-        }
-        #contact input::placeholder, #contact textarea::placeholder {
-            color: rgba(226, 232, 240, 0.6);
+            background: rgba(255,255,255,0.9);
+            color: var(--deep-blue);
         }
         #contact button {
-            padding: 1.2rem;
-            background: linear-gradient(45deg, var(--neon-cyan), var(--neon-purple));
-            color: #fff;
+            padding: 1rem;
+            background: var(--sunny-yellow);
+            color: var(--deep-blue);
             border: none;
             border-radius: 10px;
             font-weight: 700;
+            font-size: 1.1rem;
             cursor: pointer;
-            font-family: 'Orbitron', monospace;
-            transition: all 0.3s ease;
+            transition: background 0.3s ease;
+            text-transform: uppercase;
         }
         #contact button:hover {
-            box-shadow: 0 0 30px var(--neon-cyan);
-            transform: translateY(-3px);
+            background: var(--vibrant-teal);
+            color: #fff;
         }
-        /* Footer - Crypto Vibes */
+        /* Footer */
         footer {
             text-align: center;
-            padding: 3rem;
-            border-top: 1px solid var(--border-neon);
-            background: rgba(0, 0, 0, 0.8);
+            padding: 2rem;
+            background: var(--light-bg);
+            color: var(--deep-blue);
         }
         .social-links {
             display: flex;
             justify-content: center;
-            gap: 2rem;
+            gap: 1.5rem;
             margin-top: 1rem;
         }
         .social-links a {
-            color: var(--neon-cyan);
-            font-size: 2rem;
-            transition: all 0.3s ease;
+            color: var(--vibrant-teal);
+            font-size: 1.5rem;
+            transition: color 0.3s ease;
         }
         .social-links a:hover {
-            color: var(--neon-green);
-            transform: translateY(-5px) rotate(360deg);
+            color: var(--bold-orange);
         }
         /* Responsive */
         @media (max-width: 768px) {
-            .hero-title { font-size: 3rem; }
-            .typing-text { font-size: 1.2rem; }
-            #about { grid-template-columns: 1fr; }
-            .stats-grid { flex-direction: column; gap: 1rem; }
+            .hero-title { font-size: 4rem; }
+            #about { grid-template-columns: 1fr; gap: 2rem; padding: 2rem; }
             .skills-grid, .projects-grid { grid-template-columns: 1fr; }
             .nav-links { gap: 1rem; font-size: 0.9rem; }
-            .wallet-btn { display: none; } /* Hide on mobile */
+            .modal-content { width: 95%; margin: 10% auto; }
         }
     </style>
 </head>
 <body>
     <header>
         <nav>
-            <div class="logo">Web3Alex</div>
+            <div class="logo">AlexPorto</div>
             <ul class="nav-links">
                 <li><a href="#hero">Home</a></li>
                 <li><a href="#about">About</a></li>
@@ -457,199 +422,144 @@
                 <li><a href="#projects">Projects</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
-            <button class="wallet-btn">Connect Wallet</button>
         </nav>
     </header>
 
     <section id="hero">
-        <div id="particles-js"></div>
-        <div class="hero-content" data-aos="zoom-in">
-            <h1 class="hero-title">ALEX</h1>
-            <p class="typing-text" id="hero-subtitle">Blockchain Innovator & Web3 Trader</p>
-            <div class="stats-grid">
-                <div class="stat-item">
-                    <div class="stat-number" data-target="10K">0</div>
-                    <div class="stat-label">Wallets Connected</div>
-                </div>
-                <div class="stat-item">
-                    <div class="stat-number" data-target="50+">0</div>
-                    <div class="stat-label">dApps Built</div>
-                </div>
-                <div class="stat-item">
-                    <div class="stat-number" data-target="1M">0</div>
-                    <div class="stat-label">Transactions</div>
-                </div>
-            </div>
-            <a href="#about" class="cta-button">Enter the Chain</a>
+        <div class="hero-content" data-aos="fade-up">
+            <h1 class="hero-title">Bold Creative</h1>
+            <p class="hero-subtitle">I'm Alex, a dynamic developer and designer crafting vibrant digital experiences. Let's make something colorful!</p>
+            <a href="#about" class="cta-button">Start Journey</a>
         </div>
     </section>
 
     <section id="about">
-        <h2 class="section-title">About the Node</h2>
-        <div class="about-text">
-            <p>I'm Alex, a Web3 pioneer blending blockchain tech with trading mastery. From Solidity smart contracts to DeFi protocols, I build decentralized futures. This profile is your gateway to my crypto universe—pure code, infinite possibilities.</p>
-            <p>Powered by Ethereum, Solana, and beyond. Join the revolution.</p>
-        </div>
-        <div class="blockchain-avatar">
-            <i class="fas fa-cube" style="color: var(--neon-cyan);"></i>
+        <div class="about-content" data-aos="fade-up">
+            <div class="about-text">
+                <h3 style="font-family: 'Bebas Neue', sans-serif; font-size: 2.5rem; margin-bottom: 1rem; color: var(--deep-blue);">Who I Am</h3>
+                <p>With a passion for bold designs and clean code, I blend creativity with functionality. From web apps to trading tools, my work stands out with vibrant energy and user-focused innovation.</p>
+                <p>Based in the digital world, always up for collaborations that pop with color!</p>
+            </div>
+            <div class="profile-img" data-aos="zoom-in">
+                <i class="fas fa-user-tie"></i>
+            </div>
         </div>
     </section>
 
     <section id="skills">
-        <h2 class="section-title">Tech Stack</h2>
+        <h2 class="section-title" data-aos="zoom-in">Core Skills</h2>
+        <p class="section-subtitle" data-aos="fade-up">Click any skill to dive deeper into my expertise.</p>
         <div class="skills-grid">
-            <div class="skill-item" data-aos="flip-left">
-                <div class="skill-icon"><i class="fab fa-ethereum"></i></div>
-                <h3 class="skill-title">Solidity</h3>
+            <div class="skill-item" data-aos="fade-up" data-aos-delay="100" onclick="openModal('trading', 'Trading Mastery', 95, 'Trading is my forte—leveraging markets with bold strategies. From forex to crypto, I turn data into wins.', 'https://github.com/your-trading-repo')">
+                <div class="skill-icon"><i class="fas fa-chart-line"></i></div>
+                <h3 class="skill-title">Trading</h3>
                 <div class="skill-bar">
                     <div class="skill-progress" data-width="95%"></div>
                 </div>
             </div>
-            <div class="skill-item" data-aos="flip-up">
+            <div class="skill-item" data-aos="fade-up" data-aos-delay="200" onclick="openModal('webdev', 'Web Development', 85, 'Building responsive sites with HTML, CSS, JS. Bold interfaces that engage users vividly.', 'https://github.com/your-web-portfolio')">
                 <div class="skill-icon"><i class="fas fa-code"></i></div>
-                <h3 class="skill-title">React.js</h3>
-                <div class="skill-bar">
-                    <div class="skill-progress" data-width="90%"></div>
-                </div>
-            </div>
-            <div class="skill-item" data-aos="flip-right">
-                <div class="skill-icon"><i class="fas fa-network-wired"></i></div>
-                <h3 class="skill-title">Web3.js</h3>
+                <h3 class="skill-title">Web Dev</h3>
                 <div class="skill-bar">
                     <div class="skill-progress" data-width="85%"></div>
                 </div>
             </div>
-            <div class="skill-item" data-aos="flip-left">
-                <div class="skill-icon"><i class="fas fa-chart-line"></i></div>
-                <h3 class="skill-title">DeFi Trading</h3>
+            <div class="skill-item" data-aos="fade-up" data-aos-delay="300" onclick="openModal('design', 'UI/UX Design', 90, 'Crafting colorful, intuitive designs. User journeys that feel bold and effortless.', 'https://dribbble.com/your-designs')">
+                <div class="skill-icon"><i class="fas fa-paint-brush"></i></div>
+                <h3 class="skill-title">UI/UX</h3>
                 <div class="skill-bar">
-                    <div class="skill-progress" data-width="92%"></div>
+                    <div class="skill-progress" data-width="90%"></div>
                 </div>
             </div>
-            <div class="skill-item" data-aos="flip-up">
-                <div class="skill-icon"><i class="fas fa-lock"></i></div>
-                <h3 class="skill-title">Smart Contracts</h3>
+            <div class="skill-item" data-aos="fade-up" data-aos-delay="400" onclick="openModal('automation', 'Automation', 88, 'Scripts and bots for efficiency. Automating bold ideas into reality with code.', 'https://github.com/your-automation-repo')">
+                <div class="skill-icon"><i class="fas fa-robot"></i></div>
+                <h3 class="skill-title">Automation</h3>
                 <div class="skill-bar">
                     <div class="skill-progress" data-width="88%"></div>
                 </div>
             </div>
-            <div class="skill-item" data-aos="flip-right">
-                <div class="skill-icon"><i class="fab fa-node-js"></i></div>
-                <h3 class="skill-title">Node/Backend</h3>
+            <div class="skill-item" data-aos="fade-up" data-aos-delay="500" onclick="openModal('data', 'Data Analysis', 87, 'Turning numbers into insights. Bold analytics for smarter decisions in any project.', 'https://github.com/your-data-repo')">
+                <div class="skill-icon"><i class="fas fa-database"></i></div>
+                <h3 class="skill-title">Data</h3>
                 <div class="skill-bar">
                     <div class="skill-progress" data-width="87%"></div>
+                </div>
+            </div>
+            <div class="skill-item" data-aos="fade-up" data-aos-delay="600" onclick="openModal('problem', 'Problem Solving', 92, 'Tackling challenges with creative solutions. Bold thinking for complex portfolios.', 'https://github.com/your-problem-solving-repo')">
+                <div class="skill-icon"><i class="fas fa-lightbulb"></i></div>
+                <h3 class="skill-title">Problem Solving</h3>
+                <div class="skill-bar">
+                    <div class="skill-progress" data-width="92%"></div>
                 </div>
             </div>
         </div>
     </section>
 
+    <!-- Skill Modals (Generated Dynamically in JS) -->
+    <div id="skill-modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <img id="skill-img" class="skill-detail-img" src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzAwIiBoZWlnaHQ9IjIwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjMjBiMmFhIi8+PHRleHQgeD0iNTAlIiB5PSI1MCUiIGZvbnQtZmFtaWx5PSJBcmlhbCIgZm9udC1zaXplPSIxOCIgZmlsbD0iI2ZmZiIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZHk9Ii4zZW0iPkltYWdlIFBsYWNlaG9sZGVyPC90ZXh0Pjwvc3ZnPg==" alt="Skill Image">
+            <h2 id="skill-detail-title" class="skill-detail-title"></h2>
+            <p id="skill-detail-narasi" class="skill-detail-narasi"></p>
+            <p style="text-align: center;">
+                <a id="skill-project-link" href="#" class="project-link">View Project</a>
+            </p>
+        </div>
+    </div>
+
     <section id="projects">
-        <h2 class="section-title">dApp Portfolio</h2>
+        <h2 class="section-title" data-aos="zoom-in">Featured Projects</h2>
+        <p class="section-subtitle" data-aos="fade-up">Bold creations that showcase my colorful style.</p>
         <div class="projects-grid">
             <div class="project-card" data-aos="fade-up">
-                <div class="project-icon"><i class="fas fa-gem"></i></div>
-                <h3>NFT Marketplace</h3>
-                <p>Decentralized platform for minting & trading digital art on Ethereum.</p>
-                <button class="mint-btn">View on Testnet</button>
+                <div class="project-icon"><i class="fas fa-chart-line"></i></div>
+                <h3 class="project-title">Trading Dashboard</h3>
+                <p>A vibrant app for market insights with bold charts and real-time data.</p>
+                <a href="#" style="color: var(--vibrant-teal);">View Details</a>
             </div>
             <div class="project-card" data-aos="fade-up" data-aos-delay="100">
-                <div class="project-icon"><i class="fas fa-exchange-alt"></i></div>
-                <h3>DeFi Yield Farm</h3>
-                <p>Automated staking & liquidity protocol with APY optimization.</p>
-                <button class="mint-btn">Launch App</button>
+                <div class="project-icon"><i class="fas fa-code"></i></div>
+                <h3 class="project-title">Portfolio Site</h3>
+                <p>This very page—colorful, interactive, and designed to impress.</p>
+                <a href="#" style="color: var(--vibrant-teal);">Explore Code</a>
             </div>
             <div class="project-card" data-aos="fade-up" data-aos-delay="200">
-                <div class="project-icon"><i class="fas fa-robot"></i></div>
-                <h3>AI Trading Bot</h3>
-                <p>Smart contract-integrated bot for on-chain trading signals.</p>
-                <button class="mint-btn">Deploy Bot</button>
+                <div class="project-icon"><i class="fas fa-rocket"></i></div>
+                <h3 class="project-title">Automation Tool</h3>
+                <p>Bold bot for streamlining workflows with a splash of creativity.</p>
+                <a href="#" style="color: var(--vibrant-teal);">Launch Demo</a>
             </div>
         </div>
     </section>
 
     <section id="contact">
-        <h2 class="section-title">Connect on Chain</h2>
-        <form data-aos="zoom-in">
-            <input type="text" placeholder="Your Wallet Address / Name" required>
+        <h2 class="section-title" data-aos="zoom-in" style="color: #fff;">Get in Touch</h2>
+        <p class="section-subtitle" data-aos="fade-up" style="color: rgba(255,255,255,0.9);">Let's collaborate on something bold and colorful!</p>
+        <form data-aos="fade-up">
+            <input type="text" placeholder="Your Name" required>
             <input type="email" placeholder="Your Email" required>
-            <textarea rows="5" placeholder="Message: Collaboration? DAO Proposal?" required></textarea>
-            <button type="submit">Transmit Message</button>
+            <textarea rows="5" placeholder="Your Message" required></textarea>
+            <button type="submit">Send Bold Idea</button>
         </form>
     </section>
 
     <footer>
-        <p>&copy; 2024 Alex's Web3 Profile. Powered by Blockchain.</p>
+        <p>&copy; 2024 Alex's Bold Portfolio. All rights reserved.</p>
         <div class="social-links">
             <a href="#"><i class="fab fa-twitter"></i></a>
-            <a href="#"><i class="fab fa-discord"></i></a>
+            <a href="#"><i class="fab fa-linkedin"></i></a>
             <a href="#"><i class="fab fa-github"></i></a>
-            <a href="#"><i class="fab fa-medium"></i></a>
+            <a href="#"><i class="fab fa-dribbble"></i></a>
         </div>
     </footer>
 
     <script>
-        // Particles.js - Blockchain Theme
-        particlesJS('particles-js', {
-            particles: {
-                number: { value: 60, density: { enable: true, value_area: 1000 } },
-                color: { value: ['#00ffff', '#7c3aed', '#10b981'] },
-                shape: { type: ['circle', 'polygon', 'star'] },
-                opacity: { value: 0.6, random: true },
-                size: { value: 4, random: true },
-                line_linked: { enable: true, distance: 120, color: '#00ffff', opacity: 0.3, width: 1 },
-                move: { enable: true, speed: 4, direction: 'none', random: true, straight: false, out_mode: 'bounce' }
-            },
-            interactivity: {
-                detect_on: 'canvas',
-                events: { onhover: { enable: true, mode: 'bubble' }, onclick: { enable: true, mode: 'repulse' } },
-                modes: { bubble: { distance: 200, size: 6, opacity: 0.8 }, repulse: { distance: 150 } }
-            },
-            retina_detect: true
-        });
-
         // AOS Init
-        AOS.init({ duration: 1200, once: true, offset: 120 });
+        AOS.init({ duration: 1000, once: true, offset: 100 });
 
-        // Typing Animation for Hero
-        const subtitle = document.getElementById('hero-subtitle');
-        const text = 'Blockchain Innovator & Web3 Trader';
-        let i = 0;
-        function typeWriter() {
-            if (i < text.length) {
-                subtitle.innerHTML += text.charAt(i);
-                i++;
-                setTimeout(typeWriter, 100);
-            } else {
-                subtitle.style.borderRight = 'none';
-            }
-        }
-        setTimeout(typeWriter, 1000);
-
-        // Stats Counter
-        const counters = document.querySelectorAll('.stat-number');
+        // Skill Progress Animation
         const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    const target = parseInt(entry.target.getAttribute('data-target'));
-                    let count = 0;
-                    const increment = target / 60;
-                    const timer = setInterval(() => {
-                        count += increment;
-                        if (count >= target) {
-                            entry.target.textContent = target.toLocaleString();
-                            clearInterval(timer);
-                        } else {
-                            entry.target.textContent = Math.floor(count).toLocaleString();
-                        }
-                    }, 30);
-                    observer.unobserve(entry.target);
-                }
-            });
-        });
-        counters.forEach(counter => observer.observe(counter));
-
-        // Skill Progress
-        const skillObserver = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
                     const progress = entry.target.querySelector('.skill-progress');
@@ -658,24 +568,36 @@
                 }
             });
         });
-        document.querySelectorAll('.skill-item').forEach(item => skillObserver.observe(item));
+        document.querySelectorAll('.skill-item').forEach(item => observer.observe(item));
 
-        // Wallet Button Click
-        document.querySelector('.wallet-btn').addEventListener('click', () => {
-            alert('Wallet connected! MetaMask/Ethereum detected. 🚀');
-        });
-
-        // Mint Buttons
-        document.querySelectorAll('.mint-btn').forEach(btn => {
-            btn.addEventListener('click', () => {
-                alert('Minting on testnet... Transaction confirmed! 🎉');
-            });
+        // Modal Functions
+        function openModal(id, title, percent, narasi, link) {
+            document.getElementById('skill-modal').style.display = 'block';
+            document.getElementById('skill-detail-title').textContent = title;
+            document.getElementById('skill-detail-narasi').textContent = narasi;
+            document.getElementById('skill-project-link').href = link;
+            // Change image based on id (placeholder examples; edit src for real images)
+            const img = document.getElementById('skill-img');
+            if (id === 'trading') img.src = 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzAwIiBoZWlnaHQ9IjIwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjZmY2YjM1Ii8+PHRleHQgeD0iNTAlIiB5PSI1MCUiIGZvbnQtZmFtaWx5PSJBcmlhbCIgZm9udC1zaXplPSIxOCIgZmlsbD0iI2ZmZiIgZGlzcGxheT0iYmxvY2siIHRleHQtYW5jaG9yPSJtaWRkbGUiIGR5PSIuM2VtIj5UcmFkaW5nIERhc2hib2FyZDwvdGV4dD48L3N2Zz4=';
+            else if (id === 'webdev') img.src = 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzAwIiBoZWlnaHQ9IjIwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjMjBiMmFhIi8+PHRleHQgeD0iNTAlIiB5PSI1MCUiIGZvbnQtZmFtaWx5PSJBcmlhbCIgZm9udC1zaXplPSIxOCIgZmlsbD0iI2ZmZiIgZGlzcGxheT0iYmxvY2siIHRleHQtYW5jaG9yPSJtaWRkbGUiIGR5PSIuM2VtIj5XZWIgUHJvamVjdDwvdGV4dD48L3N2Zz4=';
+            // Add more for other ids...
+            else img.src = 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzAwIiBoZWlnaHQ9IjIwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjZmY5OGU4Ii8+PHRleHQgeD0iNTAlIiB5PSI1MCUiIGZvbnQtZmFtaWx5PSJBcmlhbCIgZm9udC1zaXplPSIxOCIgZmlsbD0iI2ZmZiIgZGlzcGxheT0iYmxvY2siIHRleHQtYW5jaG9yPSJtaWRkbGUiIGR5PSIuM2VtIj5Ta2lsbCBJbWFnZTwvdGV4dD48L3N2Zz4=';
+        }
+        function closeModal() {
+            document.getElementById('skill-modal').style.display = 'none';
+        }
+        window.onclick = function(event) {
+            const modal = document.getElementById('skill-modal');
+            if (event.target == modal) closeModal();
+        }
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') closeModal();
         });
 
         // Form Submit
         document.querySelector('form').addEventListener('submit', (e) => {
             e.preventDefault();
-            alert('Message transmitted to the blockchain. We'll connect soon! 🔗');
+            alert('Message sent! Excited for your bold idea 🚀');
         });
 
         // Smooth Scroll
@@ -684,12 +606,6 @@
                 e.preventDefault();
                 document.querySelector(anchor.getAttribute('href')).scrollIntoView({ behavior: 'smooth' });
             });
-        });
-
-        // Parallax for Hero (subtle)
-        window.addEventListener('scroll', () => {
-            const scrolled = window.pageYOffset;
-            document.getElementById('particles-js').style.transform = `translateY(${scrolled * 0.3}px)`;
         });
     </script>
 </body>
