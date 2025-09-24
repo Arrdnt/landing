@@ -3,35 +3,38 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Alex's Bold Portfolio - Creative Profile</title>
+    <title>Alex's Rainbow Cartoon Portfolio</title>
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <link href="https://unpkg.com/aos@next/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Comic+Neue:wght@300;400;700&display=swap" rel="stylesheet">
     <style>
-        /* Reset & Base */
+        /* Reset & Base - Cartoon Fun */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
         body {
-            font-family: 'Open Sans', sans-serif;
+            font-family: 'Comic Neue', cursive, sans-serif;
             line-height: 1.7;
-            color: #333;
-            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            color: #2c3e50;
+            background: linear-gradient(135deg, #fff3cd 0%, #e3f2fd 100%); /* Soft rainbow-like bg */
             overflow-x: hidden;
         }
-        /* Custom Colors - Bold & Colorful */
+        /* Rainbow Colors - Bold Kontras */
         :root {
-            --bold-orange: #ff6b35;
-            --vibrant-teal: #20b2aa;
-            --playful-pink: #ff69b4;
-            --sunny-yellow: #ffd23f;
-            --deep-blue: #2c3e50;
-            --light-bg: #f8f9fa;
+            --rainbow-red: #ff4757;
+            --rainbow-orange: #ffa502;
+            --rainbow-yellow: #f1c40f;
+            --rainbow-green: #2ed573;
+            --rainbow-blue: #3742fa;
+            --rainbow-indigo: #5f27cd;
+            --rainbow-violet: #ff9ff3;
+            --dark-text: #2c3e50;
+            --light-bg: #fff;
         }
-        /* Header - Bold Nav */
+        /* Header - Bold Rainbow Nav */
         header {
             position: fixed;
             top: 0;
@@ -39,8 +42,9 @@
             z-index: 1000;
             background: rgba(255, 255, 255, 0.95);
             backdrop-filter: blur(10px);
-            border-bottom: 3px solid var(--vibrant-teal);
+            border-bottom: 5px dotted var(--rainbow-orange);
             padding: 1rem 0;
+            box-shadow: 0 2px 10px rgba(255, 165, 2, 0.3); /* Cartoon shadow */
         }
         nav {
             display: flex;
@@ -52,194 +56,261 @@
         }
         .logo {
             font-family: 'Bebas Neue', sans-serif;
-            font-size: 2.5rem;
+            font-size: 3rem;
             font-weight: 400;
-            color: var(--bold-orange);
+            background: linear-gradient(45deg, var(--rainbow-red), var(--rainbow-yellow));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
             text-transform: uppercase;
-            letter-spacing: 2px;
+            letter-spacing: 3px;
+            animation: rainbowShift 3s infinite;
+        }
+        @keyframes rainbowShift {
+            0%, 100% { filter: hue-rotate(0deg); }
+            50% { filter: hue-rotate(180deg); }
         }
         .nav-links {
             display: flex;
             list-style: none;
-            gap: 2rem;
+            gap: 2.5rem;
         }
         .nav-links a {
-            color: var(--deep-blue);
+            color: var(--dark-text);
             text-decoration: none;
-            font-weight: 600;
-            transition: color 0.3s ease;
+            font-weight: 700;
+            font-size: 1.2rem;
+            transition: all 0.3s ease;
             position: relative;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            background: linear-gradient(45deg, var(--rainbow-green), var(--rainbow-blue));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
         .nav-links a:hover {
-            color: var(--playful-pink);
+            transform: scale(1.1) rotate(5deg); /* Cartoon wobble */
+            box-shadow: 0 5px 15px rgba(59, 130, 246, 0.4);
         }
-        .nav-links a::after {
-            content: '';
-            position: absolute;
-            bottom: -5px;
-            left: 0;
-            width: 0;
-            height: 3px;
-            background: linear-gradient(45deg, var(--vibrant-teal), var(--playful-pink));
-            transition: width 0.3s ease;
-        }
-        .nav-links a:hover::after {
-            width: 100%;
-        }
-        /* Hero - Bold & Vibrant */
+        /* Hero - Kartun Big & Bold */
         #hero {
             height: 100vh;
             display: flex;
             align-items: center;
             justify-content: center;
             text-align: center;
-            background: linear-gradient(135deg, var(--vibrant-teal) 0%, var(--bold-orange) 100%);
+            background: linear-gradient(135deg, var(--rainbow-red) 0%, var(--rainbow-green) 100%);
             color: #fff;
             position: relative;
             overflow: hidden;
         }
         .hero-content {
-            max-width: 800px;
+            max-width: 900px;
             padding: 0 2rem;
         }
         .hero-title {
             font-family: 'Bebas Neue', sans-serif;
-            font-size: 6rem;
+            font-size: 7rem;
             font-weight: 400;
             margin-bottom: 1rem;
             text-transform: uppercase;
-            letter-spacing: 3px;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            letter-spacing: 5px;
+            text-shadow: 3px 3px 0 var(--rainbow-yellow); /* Bold cartoon shadow */
+            animation: bounce 2s infinite;
+        }
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
         }
         .hero-subtitle {
-            font-size: 1.5rem;
+            font-size: 1.8rem;
             margin-bottom: 2rem;
             opacity: 0.95;
             font-weight: 300;
+            text-shadow: 2px 2px 0 rgba(0,0,0,0.2);
+        }
+        .hero-avatar {
+            width: 200px;
+            height: 200px;
+            margin: 0 auto 2rem;
+            border-radius: 50%;
+            background: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 8rem;
+            color: var(--rainbow-orange);
+            box-shadow: 0 10px 30px rgba(255, 165, 2, 0.5); /* Bubbly cartoon */
+            animation: wobble 3s infinite;
+        }
+        @keyframes wobble {
+            0%, 100% { transform: rotate(0deg); }
+            25% { transform: rotate(2deg); }
+            75% { transform: rotate(-2deg); }
         }
         .cta-button {
             display: inline-block;
-            padding: 1.2rem 3rem;
-            background: var(--sunny-yellow);
-            color: var(--deep-blue);
+            padding: 1.5rem 3.5rem;
+            background: linear-gradient(45deg, var(--rainbow-yellow), var(--rainbow-violet));
+            color: var(--dark-text);
             text-decoration: none;
             border-radius: 50px;
             font-weight: 700;
-            font-size: 1.1rem;
-            transition: all 0.3s ease;
+            font-size: 1.3rem;
             text-transform: uppercase;
-            letter-spacing: 1px;
-            box-shadow: 0 5px 15px rgba(255, 210, 63, 0.4);
+            letter-spacing: 2px;
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 20px rgba(255, 215, 0, 0.4);
+            border: 4px dotted var(--rainbow-indigo);
         }
         .cta-button:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 8px 25px rgba(255, 210, 63, 0.6);
-            background: var(--playful-pink);
-            color: #fff;
+            transform: scale(1.1) rotate(360deg); /* Full spin kartun! */
+            box-shadow: 0 12px 30px rgba(255, 215, 0, 0.6);
         }
-        /* Sections */
+        /* Sections - Playful Spacing */
         section {
-            padding: 6rem 2rem;
+            padding: 7rem 2rem;
             max-width: 1200px;
             margin: 0 auto;
         }
         .section-title {
             font-family: 'Bebas Neue', sans-serif;
             text-align: center;
-            font-size: 4rem;
-            margin-bottom: 3rem;
+            font-size: 5rem;
+            margin-bottom: 2rem;
             text-transform: uppercase;
-            letter-spacing: 2px;
-            background: linear-gradient(45deg, var(--bold-orange), var(--playful-pink));
+            letter-spacing: 4px;
+            background: linear-gradient(45deg, var(--rainbow-red), var(--rainbow-violet), var(--rainbow-green));
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             font-weight: 400;
+            text-shadow: 2px 2px 0 rgba(255,255,255,0.5);
+            animation: rainbowShift 2s infinite;
         }
         .section-subtitle {
             text-align: center;
-            font-size: 1.2rem;
-            opacity: 0.8;
-            margin-bottom: 3rem;
-            color: var(--deep-blue);
+            font-size: 1.4rem;
+            opacity: 0.9;
+            margin-bottom: 4rem;
+            color: var(--dark-text);
+            font-weight: 300;
         }
-        /* About - Colorful Layout */
+        /* About - Kartun Grid */
         #about {
             background: var(--light-bg);
-            border-radius: 20px;
+            border-radius: 30px;
             padding: 4rem;
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 4rem;
             align-items: center;
+            box-shadow: 0 10px 40px rgba(255, 255, 255, 0.5); /* Soft cartoon glow */
+            border: 3px dashed var(--rainbow-blue);
         }
-        #about .about-text {
-            font-size: 1.1rem;
-            color: var(--deep-blue);
+        .about-text {
+            font-size: 1.2rem;
+            color: var(--dark-text);
+        }
+        .about-text h3 {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            color: var(--rainbow-orange);
+            text-transform: uppercase;
         }
         .profile-img {
             width: 100%;
-            height: 300px;
-            background: linear-gradient(45deg, var(--vibrant-teal), var(--sunny-yellow));
-            border-radius: 20px;
+            height: 350px;
+            background: linear-gradient(45deg, var(--rainbow-yellow), var(--rainbow-green));
+            border-radius: 50% 50% 30% 30%; /* Kartun oval */
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 5rem;
+            font-size: 6rem;
             color: #fff;
-            transition: transform 0.3s ease;
+            transition: all 0.3s ease;
+            border: 5px solid var(--rainbow-red);
+            box-shadow: 5px 5px 15px rgba(255, 71, 87, 0.3); /* Playful shadow */
         }
         .profile-img:hover {
-            transform: scale(1.05);
+            transform: rotate(10deg) scale(1.05);
         }
-        /* Skills - Clickable Cards with Modal */
+        /* Skills - Kartun Clickable Cards */
         .skills-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2.5rem;
         }
         .skill-item {
-            background: #fff;
-            border: 4px solid var(--vibrant-teal);
-            border-radius: 15px;
-            padding: 2rem;
+            background: var(--light-bg);
+            border: 4px dotted var(--rainbow-indigo);
+            border-radius: 30px;
+            padding: 2.5rem;
             text-align: center;
             cursor: pointer;
-            transition: all 0.3s ease;
-            box-shadow: 0 5px 15px rgba(32, 178, 170, 0.2);
+            transition: all 0.4s ease;
+            box-shadow: 5px 5px 20px rgba(95, 39, 205, 0.2); /* Bubble shadow */
+            position: relative;
+            overflow: hidden;
+        }
+        .skill-item::before {
+            content: '💥';
+            position: absolute;
+            top: -10px;
+            right: -10px;
+            font-size: 2rem;
+            animation: sparkle 2s infinite;
+        }
+        @keyframes sparkle {
+            0%, 100% { opacity: 0; transform: scale(0); }
+            50% { opacity: 1; transform: scale(1); }
         }
         .skill-item:hover {
-            transform: translateY(-10px);
-            border-color: var(--playful-pink);
-            box-shadow: 0 10px 30px rgba(255, 105, 180, 0.3);
+            transform: translateY(-15px) rotate(5deg);
+            border-color: var(--rainbow-violet);
+            box-shadow: 0 15px 40px rgba(255, 159, 243, 0.4);
+            background: linear-gradient(45deg, #fff, var(--rainbow-yellow));
         }
         .skill-icon {
-            font-size: 3rem;
+            font-size: 4rem;
             margin-bottom: 1rem;
-            color: var(--bold-orange);
+            border-radius: 50%;
+            padding: 1rem;
+            background: linear-gradient(45deg, var(--rainbow-green), var(--rainbow-blue));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            display: inline-block;
+            box-shadow: 0 4px 10px rgba(59, 130, 246, 0.3); /* Kartun icon bubble */
+            transition: transform 0.3s ease;
+        }
+        .skill-item:hover .skill-icon {
+            transform: scale(1.2) rotate(360deg);
         }
         .skill-title {
             font-family: 'Bebas Neue', sans-serif;
-            font-size: 1.8rem;
-            margin-bottom: 0.5rem;
+            font-size: 2.2rem;
+            margin-bottom: 1rem;
             text-transform: uppercase;
-            letter-spacing: 1px;
+            letter-spacing: 2px;
+            color: var(--dark-text);
         }
         .skill-bar {
             width: 100%;
-            height: 10px;
+            height: 12px;
             background: #e0e0e0;
-            border-radius: 5px;
+            border-radius: 10px;
             overflow: hidden;
-            margin-top: 1rem;
+            margin-top: 1.5rem;
+            border: 2px dashed var(--rainbow-orange);
         }
         .skill-progress {
             height: 100%;
-            background: linear-gradient(90deg, var(--vibrant-teal), var(--sunny-yellow));
+            background: linear-gradient(90deg, var(--rainbow-red), var(--rainbow-violet));
             width: 0;
             transition: width 2s ease-in-out;
-            border-radius: 5px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px var(--rainbow-yellow); /* Glow kartun */
         }
-        /* Modal - Detailed Skill Popup */
+        /* Modal - Kartun Detailed Popup */
         .modal {
             display: none;
             position: fixed;
@@ -248,173 +319,248 @@
             top: 0;
             width: 100%;
             height: 100%;
-            background: rgba(0, 0, 0, 0.7);
-            backdrop-filter: blur(5px);
-            animation: fadeIn 0.3s ease;
+            background: rgba(0, 0, 0, 0.6);
+            backdrop-filter: blur(8px);
+            animation: cartoonFade 0.4s ease;
+        }
+        @keyframes cartoonFade {
+            from { opacity: 0; background: rgba(0,0,0,0); }
+            to { opacity: 1; }
         }
         .modal-content {
-            background: linear-gradient(135deg, #fff 0%, var(--light-bg) 100%);
+            background: linear-gradient(135deg, #fff 0%, #ffeaa7 100%);
             margin: 5% auto;
-            padding: 2rem;
-            border-radius: 20px;
-            width: 80%;
-            max-width: 600px;
-            max-height: 80vh;
+            padding: 3rem;
+            border-radius: 40px;
+            width: 85%;
+            max-width: 700px;
+            max-height: 85vh;
             overflow-y: auto;
-            border: 3px solid var(--playful-pink);
-            animation: slideIn 0.4s ease;
+            border: 5px double var(--rainbow-blue);
+            animation: popIn 0.5s ease;
             position: relative;
+            box-shadow: 10px 10px 30px rgba(0,0,0,0.2);
+        }
+        @keyframes popIn {
+            0% { transform: scale(0.5); opacity: 0; }
+            70% { transform: scale(1.1); }
+            100% { transform: scale(1); opacity: 1; }
         }
         .close {
             position: absolute;
             right: 1.5rem;
             top: 1rem;
-            font-size: 2rem;
+            font-size: 3rem;
             cursor: pointer;
-            color: var(--bold-orange);
-            transition: color 0.3s ease;
+            color: var(--rainbow-red);
+            transition: all 0.3s ease;
+            border-radius: 50%;
+            padding: 0.5rem;
+            background: #fff;
         }
         .close:hover {
-            color: var(--sunny-yellow);
+            transform: rotate(180deg) scale(1.2);
+            color: var(--rainbow-violet);
+            box-shadow: 0 5px 15px rgba(255, 159, 243, 0.5);
         }
         .skill-detail-img {
             width: 100%;
-            height: 200px;
+            height: 250px;
             object-fit: cover;
-            border-radius: 10px;
-            margin-bottom: 1rem;
+            border-radius: 20px;
+            margin-bottom: 1.5rem;
+            border: 3px dashed var(--rainbow-green);
+            box-shadow: 5px 5px 15px rgba(46, 213, 115, 0.3); /* Kartun frame */
         }
         .skill-detail-title {
             font-family: 'Bebas Neue', sans-serif;
-            font-size: 2.5rem;
-            margin-bottom: 0.5rem;
-            color: var(--deep-blue);
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            color: var(--rainbow-blue);
             text-transform: uppercase;
+            letter-spacing: 3px;
+            text-shadow: 2px 2px 0 var(--rainbow-yellow);
         }
         .skill-detail-narasi {
-            font-size: 1rem;
-            margin-bottom: 1rem;
-            line-height: 1.6;
-            color: #555;
+            font-size: 1.2rem;
+            margin-bottom: 1.5rem;
+            line-height: 1.8;
+            color: var(--dark-text);
+            font-style: italic; /* Fun kartun quote feel */
         }
         .project-link {
             display: inline-block;
-            padding: 0.8rem 1.5rem;
-            background: var(--bold-orange);
+            padding: 1rem 2rem;
+            background: linear-gradient(45deg, var(--rainbow-orange), var(--rainbow-red));
             color: #fff;
             text-decoration: none;
-            border-radius: 25px;
-            font-weight: 600;
-            transition: background 0.3s ease;
+            border-radius: 30px;
+            font-weight: 700;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            box-shadow: 0 5px 15px rgba(255, 165, 2, 0.4);
+            border: 2px dotted #fff;
         }
         .project-link:hover {
-            background: var(--playful-pink);
+            transform: bounce 0.5s;
+            background: linear-gradient(45deg, var(--rainbow-violet), var(--rainbow-green));
+            box-shadow: 0 8px 25px rgba(255, 159, 243, 0.6);
         }
-        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
-        @keyframes slideIn { from { transform: translateY(-50px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
-        /* Projects - Colorful Cards */
+        /* Projects - Rainbow Kartun Cards */
         .projects-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 3rem;
         }
         .project-card {
-            background: #fff;
-            border: 3px solid var(--sunny-yellow);
-            border-radius: 15px;
-            padding: 2rem;
+            background: var(--light-bg);
+            border: 4px dotted var(--rainbow-violet);
+            border-radius: 30px;
+            padding: 3rem;
             text-align: center;
-            transition: all 0.3s ease;
-            box-shadow: 0 5px 15px rgba(255, 210, 63, 0.2);
+            transition: all 0.4s ease;
+            box-shadow: 8px 8px 25px rgba(255, 159, 243, 0.3);
+            position: relative;
+        }
+        .project-card::after {
+            content: '⭐';
+            position: absolute;
+            top: 10px;
+            right: 20px;
+            font-size: 2rem;
+            animation: twinkle 2s infinite;
+        }
+        @keyframes twinkle {
+            0%, 100% { opacity: 0.5; }
+            50% { opacity: 1; transform: scale(1.2); }
         }
         .project-card:hover {
-            transform: translateY(-5px);
-            border-color: var(--vibrant-teal);
-            box-shadow: 0 10px 30px rgba(32, 178, 170, 0.3);
+            transform: translateY(-20px) rotate(3deg);
+            border-color: var(--rainbow-green);
+            box-shadow: 0 20px 50px rgba(46, 213, 115, 0.4);
+            background: linear-gradient(45deg, #fff, var(--rainbow-yellow));
         }
         .project-icon {
-            font-size: 3rem;
-            margin-bottom: 1rem;
-            color: var(--playful-pink);
+            font-size: 4.5rem;
+            margin-bottom: 1.5rem;
+            border-radius: 50%;
+            padding: 1.5rem;
+            background: linear-gradient(45deg, var(--rainbow-indigo), var(--rainbow-orange));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            display: inline-block;
+            box-shadow: 0 6px 20px rgba(255, 165, 2, 0.4);
         }
         .project-title {
             font-family: 'Bebas Neue', sans-serif;
-            font-size: 2rem;
-            margin-bottom: 0.5rem;
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
             text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--rainbow-blue);
         }
-        /* Contact - Form Bold */
+        /* Contact - Pelangi Form */
         #contact {
-            background: linear-gradient(135deg, var(--bold-orange) 0%, var(--playful-pink) 100%);
+            background: linear-gradient(135deg, var(--rainbow-red) 0%, var(--rainbow-violet) 100%);
             color: #fff;
-            border-radius: 20px;
-            padding: 4rem;
+            border-radius: 40px;
+            padding: 5rem;
+            box-shadow: 0 10px 40px rgba(255, 71, 87, 0.3);
+            border: 5px dashed #fff;
+        }
+        #contact .section-title {
+            color: #fff;
+            text-shadow: 3px 3px 0 var(--rainbow-yellow);
+        }
+        #contact .section-subtitle {
+            color: rgba(255,255,255,0.9);
         }
         #contact form {
             display: grid;
-            gap: 1.5rem;
-            max-width: 600px;
+            gap: 2rem;
+            max-width: 700px;
             margin: 0 auto;
         }
         #contact input, #contact textarea {
-            padding: 1rem;
-            border: none;
-            border-radius: 10px;
-            font-size: 1rem;
+            padding: 1.5rem;
+            border: 3px dotted rgba(255,255,255,0.5);
+            border-radius: 25px;
+            font-size: 1.1rem;
             background: rgba(255,255,255,0.9);
-            color: var(--deep-blue);
+            color: var(--dark-text);
+            font-family: 'Comic Neue', cursive;
+            transition: border-color 0.3s ease;
+        }
+        #contact input:focus, #contact textarea:focus {
+            border-color: var(--rainbow-green);
+            outline: none;
+            box-shadow: 0 0 20px rgba(46, 213, 115, 0.5);
         }
         #contact button {
-            padding: 1rem;
-            background: var(--sunny-yellow);
-            color: var(--deep-blue);
+            padding: 1.5rem;
+            background: linear-gradient(45deg, var(--rainbow-yellow), var(--rainbow-orange));
+            color: var(--dark-text);
             border: none;
-            border-radius: 10px;
+            border-radius: 30px;
             font-weight: 700;
-            font-size: 1.1rem;
+            font-size: 1.3rem;
             cursor: pointer;
-            transition: background 0.3s ease;
+            transition: all 0.3s ease;
             text-transform: uppercase;
+            letter-spacing: 2px;
+            font-family: 'Bebas Neue', sans-serif;
+            box-shadow: 0 6px 20px rgba(255, 215, 0, 0.4);
+            border: 3px dotted var(--rainbow-indigo);
         }
         #contact button:hover {
-            background: var(--vibrant-teal);
-            color: #fff;
+            transform: scale(1.05) rotate(5deg);
+            box-shadow: 0 10px 30px rgba(255, 165, 2, 0.6);
         }
-        /* Footer */
+        /* Footer - Fun Social */
         footer {
             text-align: center;
-            padding: 2rem;
+            padding: 3rem;
             background: var(--light-bg);
-            color: var(--deep-blue);
+            color: var(--dark-text);
+            border-top: 5px dotted var(--rainbow-violet);
         }
         .social-links {
             display: flex;
             justify-content: center;
-            gap: 1.5rem;
-            margin-top: 1rem;
+            gap: 2rem;
+            margin-top: 1.5rem;
         }
         .social-links a {
-            color: var(--vibrant-teal);
-            font-size: 1.5rem;
-            transition: color 0.3s ease;
+            font-size: 2.5rem;
+            color: var(--rainbow-green);
+            transition: all 0.3s ease;
+            border-radius: 50%;
+            padding: 1rem;
+            background: #fff;
+            box-shadow: 0 5px 15px rgba(46, 213, 115, 0.3);
         }
         .social-links a:hover {
-            color: var(--bold-orange);
+            transform: rotate(360deg) scale(1.2);
+            color: var(--rainbow-red);
+            box-shadow: 0 8px 25px rgba(255, 71, 87, 0.5);
         }
         /* Responsive */
         @media (max-width: 768px) {
-            .hero-title { font-size: 4rem; }
-            #about { grid-template-columns: 1fr; gap: 2rem; padding: 2rem; }
+            .hero-title { font-size: 4.5rem; }
+            .hero-avatar { width: 150px; height: 150px; font-size: 5rem; }
+            #about { grid-template-columns: 1fr; gap: 2rem; padding: 2rem; border-radius: 20px; }
             .skills-grid, .projects-grid { grid-template-columns: 1fr; }
-            .nav-links { gap: 1rem; font-size: 0.9rem; }
-            .modal-content { width: 95%; margin: 10% auto; }
+            .nav-links { gap: 1rem; font-size: 1rem; }
+            .modal-content { width: 95%; margin: 10% auto; padding: 2rem; }
+            .section-title { font-size: 3.5rem; }
         }
     </style>
 </head>
 <body>
     <header>
         <nav>
-            <div class="logo">AlexPorto</div>
+            <div class="logo">AlexKartun</div>
             <ul class="nav-links">
                 <li><a href="#hero">Home</a></li>
                 <li><a href="#about">About</a></li>
@@ -426,66 +572,76 @@
     </header>
 
     <section id="hero">
-        <div class="hero-content" data-aos="fade-up">
-            <h1 class="hero-title">Bold Creative</h1>
-            <p class="hero-subtitle">I'm Alex, a dynamic developer and designer crafting vibrant digital experiences. Let's make something colorful!</p>
-            <a href="#about" class="cta-button">Start Journey</a>
+        <div class="hero-content" data-aos="zoom-in">
+            <svg class="hero-avatar" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                <!-- Simple cartoon avatar SVG -->
+                <circle cx="50" cy="50" r="45" fill="#ffeb3b" stroke="#f57c00" stroke-width="3"/>
+                <circle cx="35" cy="35" r="8" fill="white"/>
+                <circle cx="65" cy="35" r="8" fill="white"/>
+                <circle cx="33" cy="33" r="4" fill="black"/>
+                <circle cx="63" cy="33" r="4" fill="black"/>
+                <path d="M30 60 Q50 70 70 60" stroke="#f57c00" stroke-width="4" fill="none"/>
+                <text x="50" y="95" font-family="Comic Sans MS, cursive" font-size="12" fill="#2c3e50" text-anchor="middle">Alex!</text>
+            </svg>
+            <h1 class="hero-title">Rainbow World</h1>
+            <p class="hero-subtitle">Hey! I'm Alex, a bold cartoon creator turning ideas into colorful adventures. Click skills for fun details!</p>
+            <a href="#about" class="cta-button">Join the Fun</a>
         </div>
     </section>
 
     <section id="about">
         <div class="about-content" data-aos="fade-up">
             <div class="about-text">
-                <h3 style="font-family: 'Bebas Neue', sans-serif; font-size: 2.5rem; margin-bottom: 1rem; color: var(--deep-blue);">Who I Am</h3>
-                <p>With a passion for bold designs and clean code, I blend creativity with functionality. From web apps to trading tools, my work stands out with vibrant energy and user-focused innovation.</p>
-                <p>Based in the digital world, always up for collaborations that pop with color!</p>
+                <h3>Super Fun Me!</h3>
+                <p>I'm a cartoon-loving dev who mixes bold designs with playful code. From trading comics to web stories, my portfolio is full of rainbow surprises and big ideas. Let's draw something awesome together!</p>
+                <p>Every project is a colorful page in my sketchbook—full of energy and smiles! 😄</p>
             </div>
-            <div class="profile-img" data-aos="zoom-in">
-                <i class="fas fa-user-tie"></i>
+            <div class="profile-img" data-aos="flip-left">
+                <i class="fas fa-drafting-compass"></i>
             </div>
         </div>
     </section>
 
     <section id="skills">
-        <h2 class="section-title" data-aos="zoom-in">Core Skills</h2>
-        <p class="section-subtitle" data-aos="fade-up">Click any skill to dive deeper into my expertise.</p>
+        <h2 class="section-title" data-aos="zoom-in">Super Skills</h2>
+        <p class="section-subtitle" data-aos="fade-up">Click a skill to see the cartoon magic behind it!</p>
         <div class="skills-grid">
-            <div class="skill-item" data-aos="fade-up" data-aos-delay="100" onclick="openModal('trading', 'Trading Mastery', 95, 'Trading is my forte—leveraging markets with bold strategies. From forex to crypto, I turn data into wins.', 'https://github.com/your-trading-repo')">
+            <div class="skill-item" data-aos="bounce-in" data-aos-delay="100" onclick="openModal('trading', 'Trading Magic', 95, 'Zoom! Trading like a superhero—bold charts and rainbow profits. I turn market mazes into fun comics of wins! 📈✨', 'https://github.com/alex-kartun-trading')">
                 <div class="skill-icon"><i class="fas fa-chart-line"></i></div>
                 <h3 class="skill-title">Trading</h3>
                 <div class="skill-bar">
                     <div class="skill-progress" data-width="95%"></div>
                 </div>
             </div>
-            <div class="skill-item" data-aos="fade-up" data-aos-delay="200" onclick="openModal('webdev', 'Web Development', 85, 'Building responsive sites with HTML, CSS, JS. Bold interfaces that engage users vividly.', 'https://github.com/your-web-portfolio')">
+            <div class="skill-item" data-aos="bounce-in" data-aos-delay="200" onclick="openModal('webdev', 'Web Wizardry', 85, 'Poof! Building sites with colorful code—interactive like cartoons. Hover and click for surprises! 🌈💻', 'https://github.com/alex-kartun-web')">
                 <div class="skill-icon"><i class="fas fa-code"></i></div>
                 <h3 class="skill-title">Web Dev</h3>
                 <div class="skill-bar">
                     <div class="skill-progress" data-width="85%"></div>
                 </div>
             </div>
-            <div class="skill-item" data-aos="fade-up" data-aos-delay="300" onclick="openModal('design', 'UI/UX Design', 90, 'Crafting colorful, intuitive designs. User journeys that feel bold and effortless.', 'https://dribbble.com/your-designs')">
+            <div class="skill-item" data-aos="bounce-in" data-aos-delay="300" onclick="openModal('design', 'Design Doodles', 90, 'Scribble! Creating bold UI with rainbow vibes—user-friendly like a fun storyboard. Colors that pop! 🎨', 'https://dribbble.com/alex-kartun-design')">
                 <div class="skill-icon"><i class="fas fa-paint-brush"></i></div>
                 <h3 class="skill-title">UI/UX</h3>
                 <div class="skill-bar">
                     <div class="skill-progress" data-width="90%"></div>
                 </div>
             </div>
-            <div class="skill-item" data-aos="fade-up" data-aos-delay="400" onclick="openModal('automation', 'Automation', 88, 'Scripts and bots for efficiency. Automating bold ideas into reality with code.', 'https://github.com/your-automation-repo')">
+            <div class="skill-item" data-aos="bounce-in" data-aos-delay="400" onclick="openModal('automation', 'Robot Buddies', 88, 'Beep boop! Fun bots that automate adventures—saving time with cartoon efficiency. Zoom zoom! 🤖', 'https://github.com/alex-kartun-bots')">
                 <div class="skill-icon"><i class="fas fa-robot"></i></div>
                 <h3 class="skill-title">Automation</h3>
                 <div class="skill-bar">
                     <div class="skill-progress" data-width="88%"></div>
                 </div>
             </div>
-            <div class="skill-item" data-aos="fade-up" data-aos-delay="500" onclick="openModal('data', 'Data Analysis', 87, 'Turning numbers into insights. Bold analytics for smarter decisions in any project.', 'https://github.com/your-data-repo')">
+            <div class="skill-item" data-aos="bounce-in" data-aos-delay="500" onclick="openModal('data', 'Data Drawings', 87, 'Sketch! Analyzing data like cartoon plots—turning numbers into bold stories. Insights with flair! 📊', 'https://github.com/alex-kartun-data')">
                 <div class="skill-icon"><i class="fas fa-database"></i></div>
                 <h3 class="skill-title">Data</h3>
                 <div class="skill-bar">
                     <div class="skill-progress" data-width="87%"></div>
                 </div>
             </div>
-            <div class="skill-item" data-aos="fade-up" data-aos-delay="600" onclick="openModal('problem', 'Problem Solving', 92, 'Tackling challenges with creative solutions. Bold thinking for complex portfolios.', 'https://github.com/your-problem-solving-repo')">
+            <div class="skill-item" data-aos="bounce-in" data-aos-delay="600" onclick="openModal('problem', 'Puzzle Power', 92, 'Ta-da! Solving problems with creative twists—bold ideas like cartoon cliffhangers resolved happily! 🧩', 'https://github.com/alex-kartun-puzzles')">
                 <div class="skill-icon"><i class="fas fa-lightbulb"></i></div>
                 <h3 class="skill-title">Problem Solving</h3>
                 <div class="skill-bar">
@@ -495,76 +651,77 @@
         </div>
     </section>
 
-    <!-- Skill Modals (Generated Dynamically in JS) -->
+    <!-- Skill Modal -->
     <div id="skill-modal" class="modal">
         <div class="modal-content">
             <span class="close" onclick="closeModal()">&times;</span>
-            <img id="skill-img" class="skill-detail-img" src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzAwIiBoZWlnaHQ9IjIwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjMjBiMmFhIi8+PHRleHQgeD0iNTAlIiB5PSI1MCUiIGZvbnQtZmFtaWx5PSJBcmlhbCIgZm9udC1zaXplPSIxOCIgZmlsbD0iI2ZmZiIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZHk9Ii4zZW0iPkltYWdlIFBsYWNlaG9sZGVyPC90ZXh0Pjwvc3ZnPg==" alt="Skill Image">
+            <img id="skill-img" class="skill-detail-img" src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAwIiBoZWlnaHQ9IjI1MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjZmZmZWFiIiBzdHJva2U9IiNmZjQ3NTciIHN0cm9rZS13aWR0aD0iNCIvPjxjaXJjbGUgY3g9IjUwIiBjeT0iNTAiIHI9IjIwIiBmaWxsPSIjZmY0NzU3Ii8+PHRleHQgeD0iNTAlIiB5PSI2NSUiIGZvbnQtZmFtaWx5PSJDb21pYyBOZXVlLCBjb21pYyBzYW5zIiBmb250LXNpemU9IjE4IiBmaWxsPSIjMmMzZTUwIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBkeT0iLjNlbSI+SmV0IFRoZSBGdW4IFN0YXJ0ITwvdGV4dD48L3N2Zz4=" alt="Cartoon Skill">
             <h2 id="skill-detail-title" class="skill-detail-title"></h2>
             <p id="skill-detail-narasi" class="skill-detail-narasi"></p>
             <p style="text-align: center;">
-                <a id="skill-project-link" href="#" class="project-link">View Project</a>
+                <a id="skill-project-link" href="#" class="project-link">Explore Cartoon Project!</a>
             </p>
         </div>
     </div>
 
     <section id="projects">
-        <h2 class="section-title" data-aos="zoom-in">Featured Projects</h2>
-        <p class="section-subtitle" data-aos="fade-up">Bold creations that showcase my colorful style.</p>
+        <h2 class="section-title" data-aos="zoom-in">Fun Projects</h2>
+        <p class="section-subtitle" data-aos="fade-up">Bold rainbow creations full of cartoon charm!</p>
         <div class="projects-grid">
-            <div class="project-card" data-aos="fade-up">
+            <div class="project-card" data-aos="flip-left">
                 <div class="project-icon"><i class="fas fa-chart-line"></i></div>
-                <h3 class="project-title">Trading Dashboard</h3>
-                <p>A vibrant app for market insights with bold charts and real-time data.</p>
-                <a href="#" style="color: var(--vibrant-teal);">View Details</a>
+                <h3 class="project-title">Trading Comic</h3>
+                <p>A fun dashboard with cartoon charts—watch profits bounce like balloons!</p>
+                <a href="#" style="color: var(--rainbow-orange); font-weight: 700;">See the Strip</a>
             </div>
-            <div class="project-card" data-aos="fade-up" data-aos-delay="100">
+            <div class="project-card" data-aos="flip-up">
                 <div class="project-icon"><i class="fas fa-code"></i></div>
-                <h3 class="project-title">Portfolio Site</h3>
-                <p>This very page—colorful, interactive, and designed to impress.</p>
-                <a href="#" style="color: var(--vibrant-teal);">Explore Code</a>
+                <h3 class="project-title">Web Adventure</h3>
+                <p>This site itself—interactive like a choose-your-story book, rainbow edition!</p>
+                <a href="#" style="color: var(--rainbow-orange); font-weight: 700;">Play Along</a>
             </div>
-            <div class="project-card" data-aos="fade-up" data-aos-delay="200">
+            <div class="project-card" data-aos="flip-right">
                 <div class="project-icon"><i class="fas fa-rocket"></i></div>
-                <h3 class="project-title">Automation Tool</h3>
-                <p>Bold bot for streamlining workflows with a splash of creativity.</p>
-                <a href="#" style="color: var(--vibrant-teal);">Launch Demo</a>
+                <h3 class="project-title">Bot Buddies</h3>
+                <p>Cute robots automating your day—zoom with cartoon speed and smiles!</p>
+                <a href="#" style="color: var(--rainbow-orange); font-weight: 700;">Launch Fun</a>
             </div>
         </div>
     </section>
 
     <section id="contact">
-        <h2 class="section-title" data-aos="zoom-in" style="color: #fff;">Get in Touch</h2>
-        <p class="section-subtitle" data-aos="fade-up" style="color: rgba(255,255,255,0.9);">Let's collaborate on something bold and colorful!</p>
+        <h2 class="section-title" data-aos="zoom-in">Chat Time!</h2>
+        <p class="section-subtitle" data-aos="fade-up">Send a rainbow message—let's draw bold ideas together! 📝</p>
         <form data-aos="fade-up">
-            <input type="text" placeholder="Your Name" required>
-            <input type="email" placeholder="Your Email" required>
-            <textarea rows="5" placeholder="Your Message" required></textarea>
-            <button type="submit">Send Bold Idea</button>
+            <input type="text" placeholder="Your Fun Name" required>
+            <input type="email" placeholder="Your Email Adventure" required>
+            <textarea rows="6" placeholder="Tell me your colorful story or project idea!" required></textarea>
+            <button type="submit">Blast Off Message! 🚀</button>
         </form>
     </section>
 
     <footer>
-        <p>&copy; 2024 Alex's Bold Portfolio. All rights reserved.</p>
+        <p>&copy; 2024 Alex's Rainbow Cartoon Porto. Full of color & fun!</p>
         <div class="social-links">
             <a href="#"><i class="fab fa-twitter"></i></a>
-            <a href="#"><i class="fab fa-linkedin"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
             <a href="#"><i class="fab fa-github"></i></a>
-            <a href="#"><i class="fab fa-dribbble"></i></a>
+            <a href="#"><i class="fab fa-behance"></i></a>
         </div>
     </footer>
 
     <script>
-        // AOS Init
-        AOS.init({ duration: 1000, once: true, offset: 100 });
+        // AOS Init - Cartoon Animations
+        AOS.init({ duration: 1200, once: true, offset: 100, easing: 'ease-out-cubic' });
 
-        // Skill Progress Animation
+        // Skill Progress - Rainbow Fill
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
                     const progress = entry.target.querySelector('.skill-progress');
                     const width = progress.getAttribute('data-width');
                     progress.style.width = width;
+                    progress.style.animation = 'rainbowShift 1s infinite';
                 }
             });
         });
@@ -576,12 +733,19 @@
             document.getElementById('skill-detail-title').textContent = title;
             document.getElementById('skill-detail-narasi').textContent = narasi;
             document.getElementById('skill-project-link').href = link;
-            // Change image based on id (placeholder examples; edit src for real images)
+            // Kartun SVG Images per ID (fun placeholders)
             const img = document.getElementById('skill-img');
-            if (id === 'trading') img.src = 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzAwIiBoZWlnaHQ9IjIwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjZmY2YjM1Ii8+PHRleHQgeD0iNTAlIiB5PSI1MCUiIGZvbnQtZmFtaWx5PSJBcmlhbCIgZm9udC1zaXplPSIxOCIgZmlsbD0iI2ZmZiIgZGlzcGxheT0iYmxvY2siIHRleHQtYW5jaG9yPSJtaWRkbGUiIGR5PSIuM2VtIj5UcmFkaW5nIERhc2hib2FyZDwvdGV4dD48L3N2Zz4=';
-            else if (id === 'webdev') img.src = 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzAwIiBoZWlnaHQ9IjIwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjMjBiMmFhIi8+PHRleHQgeD0iNTAlIiB5PSI1MCUiIGZvbnQtZmFtaWx5PSJBcmlhbCIgZm9udC1zaXplPSIxOCIgZmlsbD0iI2ZmZiIgZGlzcGxheT0iYmxvY2siIHRleHQtYW5jaG9yPSJtaWRkbGUiIGR5PSIuM2VtIj5XZWIgUHJvamVjdDwvdGV4dD48L3N2Zz4=';
-            // Add more for other ids...
-            else img.src = 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzAwIiBoZWlnaHQ9IjIwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjZmY5OGU4Ii8+PHRleHQgeD0iNTAlIiB5PSI1MCUiIGZvbnQtZmFtaWx5PSJBcmlhbCIgZm9udC1zaXplPSIxOCIgZmlsbD0iI2ZmZiIgZGlzcGxheT0iYmxvY2siIHRleHQtYW5jaG9yPSJtaWRkbGUiIGR5PSIuM2VtIj5Ta2lsbCBJbWFnZTwvdGV4dD48L3N2Zz4=';
+            if (id === 'trading') {
+                img.src = 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAwIiBoZWlnaHQ9IjI1MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjZmZmZWFiIiBzdHJva2U9IiNmZjQ3NTciIHN0cm9rZS13aWR0aD0iNCIgcm91bmRlZD0iMjAiLz48cGF0aCBkPSJNNTAgNTAgTDM1MCA1MCBNNTAgMTUwIEwzNTAgMTUwIE01MCAyNTAgTDM1MCAyNTAiIHN0cm9rZT0iIzJmNGY0YyIgc3Ryb2tlLXdpZHRoPSI0Ii8+PGNpcmNsZSBjeD0iMTAwIiBjeT0iMTAwIiByPSIyMCIgZmlsbD0iIzIxZDRmYyIvPjxjaXJjbGUgY3g9IjMwMCIgY3k9IjE1MCIgcj0iMTUiIGZpbGw9IiMyMWQ0ZmMiLz48dGV4dCB4PSI1MCUiIHk9IjUyJSIgZm9udC1mYW1pbHk9IkNvbWljIE5ldWUsIGNvbWljIHNhbnMiIGZvbnQtc2l6ZT0iMTgiIGZpbGw9IiMyYzNlNTAiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGR5PSIuM2VtIj5UcmFkaW5nIENvbWljITwvdGV4dD48L3N2Zz4=';
+            } else if (id === 'webdev') {
+                img.src = 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAwIiBoZWlnaHQ9IjI1MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjZmZmZWFiIiBzdHJva2U9IiMyZWQ1NzMiIHN0cm9rZS13aWR0aD0iNCIgcm91bmRlZD0iMjAiLz48cmVjdCB4PSIxMCIgeT0iNTAiIHdpZHRoPSIzOCIgaGVpZ2h0PSI2MCIgZmlsbD0iIzIxZDRmYyIgcng9IjIiLz48cmVjdCB4PSI1NSIgeT0iNTUiIHdpZHRoPSIyNSIgaGVpZ2h0PSI0NSIgfmlsbD0iIzIxZDRmYyIgcng9IjIiLz48dGV4dCB4PSI1MCUiIHk9IjUyJSIgZm9udC1mYW1pbHk9IkNvbWljIE5ldWUsIGNvbWljIHNhbnMiIGZvbnQtc2l6ZT0iMTgiIGZpbGw9IiMyYzNlNTAiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGR5PSIuM2VtIj5XZWIgV2l6YXJkITwvdGV4dD48L3N2Zz4=';
+            } else if (id === 'automation') {
+                img.src = 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAwIiBoZWlnaHQ9IjI1MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjZmZmZWFiIiBzdHJva2U9IiNmZjkwNDEiIHN0cm9rZS13aWR0aD0iNCIgcm91bmRlZD0iMjAiLz48Y2lyY2xlIGN4PSIyMDAiIGN5PSIxMDAiIHI9IjQwIiBmaWxsPSIjZmY5MDQxIi8+PGNpcmNsZSBjeD0iMTUwIiBjeT0iMTUwIiByPSIxNSIgZmlsbD0iIzIxZDRmYyIvPjxjaXJjbGUgY3g9IjI1MCIgY3k9IjE1MCIgcj0iMjAiIGZpbGw9IiMyMWQ0ZmMiLz48dGV4dCB4PSI1MCUiIHk9IjUyJSIgZm9udC1mYW1pbHk9IkNvbWljIE5ldWUsIGNvbWljIHNhbnMiIGZvbnQtc2l6ZT0iMTgiIGZpbGw9IiMyYzNlNTAiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGR5PSIuM2VtIj5Cb3QgQnVkZHk8L3RleHQ+PC9zdmc+';
+            } else {
+                // Default cartoon placeholder
+                img.src = 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAwIiBoZWlnaHQ9IjI1MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjZmZmZWFiIiBzdHJva2U9IiM1ZjI3Y2QiIHN0cm9rZS13aWR0aD0iNCIgcm91bmRlZD0iMjAiLz48cG9seWdvbiBwb2ludHM9IjEwMCwxMDAgMjAwLDQwIDIzMCwxMjAgMjUwLDYwIjE0MCwxNDAgMjAwLDEzNSIgc3Ryb2tlPSIjNWYyN2NkIiBzdHJva2Utd2lkdGg9IjMiIGZpbGw9IiM1ZjI3Y2QiLz48dGV4dCB4PSI1MCUiIHk9IjUyJSIgZm9udC1mYW1pbHk9IkNvbWljIE5ldWUsIGNvbWljIHNhbnMiIGZvbnQtc2l6ZT0iMTgiIGZpbGw9IiMyYzNlNTAiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGR5PSIuM2VtIj5CbyBCaWdpIEZ1biE8L3RleHQ+PC9zdmc+';
+            }
+            // Auto change for other skills similarly
         }
         function closeModal() {
             document.getElementById('skill-modal').style.display = 'none';
@@ -594,17 +758,20 @@
             if (e.key === 'Escape') closeModal();
         });
 
-        // Form Submit
+        // Form Submit - Fun Alert
         document.querySelector('form').addEventListener('submit', (e) => {
             e.preventDefault();
-            alert('Message sent! Excited for your bold idea 🚀');
+            alert('Yay! Your rainbow message zoomed off—I'll reply with cartoon sketches soon! 🌈😊');
         });
 
-        // Smooth Scroll
+        // Smooth Scroll with Bounce
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', (e) => {
                 e.preventDefault();
-                document.querySelector(anchor.getAttribute('href')).scrollIntoView({ behavior: 'smooth' });
+                document.querySelector(anchor.getAttribute('href')).scrollIntoView({ 
+                    behavior: 'smooth',
+                    block: 'start'
+                });
             });
         });
     </script>
